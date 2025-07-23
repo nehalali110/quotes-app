@@ -2,6 +2,12 @@
 
 A minimalist Flutter app delivering unfiltered, brutally honest quotes — because not every quote has to be motivational.
 
+
+---
+
+### 🚀 Live Demo
+👉 [Click to try the app](https://nehalali110.github.io/quotes-app/)
+
 ---
 
 ## ✨ Features
