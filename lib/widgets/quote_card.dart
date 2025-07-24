@@ -59,6 +59,14 @@ class QuoteCard extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 40,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Add to Favourites : "),
+                IconButton(onPressed: () => print("Button pressed"), icon: Icon(Icons.heat_pump_rounded)),
+              ],
+            )
           ],
         ),
       ),
