@@ -12,8 +12,8 @@ class QuoteCard extends StatelessWidget {
     return DefaultTextStyle(
       style: TextStyle(fontFamily: 'Bangers'),
       child: Container(
-        height: screenWidth * 0.35,
-        width: screenWidth * 0.5,
+        height: screenWidth * 0.5,
+        width: screenWidth * 0.8,
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(color: Colors.black, width: 2),
