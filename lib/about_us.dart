@@ -41,7 +41,7 @@ class AboutScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
               child: Container(
-                width: screenWidth * 0.5,
+                width: (screenWidth * 0.5).clamp(300, 600),
                 decoration: BoxDecoration(
                   border: Border.all(width: 2, color: Colors.black),
                 ),
