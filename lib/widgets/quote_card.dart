@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'add_to_favourites.dart';
 
 class QuoteCard extends StatelessWidget {
   String? quote;
@@ -64,7 +65,7 @@ class QuoteCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("Add to Favourites : "),
-                IconButton(onPressed: () => print("Button pressed"), icon: Icon(Icons.heat_pump_rounded)),
+                favourite_button()
               ],
             )
           ],
