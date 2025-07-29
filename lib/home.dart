@@ -37,7 +37,7 @@ class myHome extends ChangeNotifierProvider {
           ),
         ],
       ),
-      body: Center(child: MyQuoteApp()),
+      body: Center(child: QuoteCard()),
     );
   }
 }
