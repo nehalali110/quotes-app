@@ -37,10 +37,26 @@ class MyQuoteApp extends ChangeNotifier {
   }
   ];
 
+  final favourite_quotes = [];
+
   int get index => _index;
 
   set index(int newIndex){
     _index = newIndex;
+    notifyListeners();
+  }
+
+  void toggleHeart(){
+    quotes_list[index]['isFavourite'] = !(quotes_list[index]['isFavourite'] as bool);
+    if(quotes_list[index]['isFavourite'] as bool){
+      favourite_quotes.add({'quote' : quotes_list[index]['quote'] , 'author' : quotes_list[index]['author']});
+    } else{
+      favourite_quotes.removeWhere((item) => 
+        item['quote'] == quotes_list[index]['quote'] &&
+        item['author'] == quotes_list[index]['author']
+      );
+    }
+    print(favourite_quotes);
     notifyListeners();
   }
 }
