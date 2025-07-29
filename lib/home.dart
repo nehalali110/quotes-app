@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'about_us.dart';
 import 'widgets/quote_card.dart';
 import 'widgets/quote_screen.dart';
+import 'package:provider/provider.dart';
 
-class myHome extends StatelessWidget {
+class myHome extends ChangeNotifierProvider {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    create : (context) => MyQuoteApp();
+    child : Scaffold(
       appBar: AppBar(
         title: Text("Demotivate Yourself Today!!"),
         elevation: 10,
