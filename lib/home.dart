@@ -35,7 +35,7 @@ class myHome extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(child: MyQuoteApp()),
+      body: Center(child: QuoteCard()),
     );
   }
 }

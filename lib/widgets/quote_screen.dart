@@ -2,16 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'quote_card.dart';
 
-class MyQuoteApp extends StatefulWidget {
-  @override
-  State<MyQuoteApp> createState() => _MyQuoteAppState();
-}
-
-class _MyQuoteAppState extends State<MyQuoteApp> {
-  var quote;
-  var author;
-  late int i = 0;
-  var quotes_list = [
+class MyQuoteApp extends ChangeNotifier {
+  int _index = 0;
+  final quotes_list = [
   {
     'quote': "I always wanted to be somebody, but now I realize I should have been more specific.",
     'author': "Lily Tomlin",
@@ -42,31 +35,13 @@ class _MyQuoteAppState extends State<MyQuoteApp> {
     'author': "Every developer ever",
     'isFavourite' : false
   }
-];
+  ];
 
+  int get index => _index;
 
-@override
-void initState() {
-  super.initState();
-  changeQuote();
-}
-
-void changeQuote(){
-  setState(() {
-    //int randomIndex = Random().nextInt(quotes_list.length);
-    quote = quotes_list[i]['quote'];
-    author = quotes_list[i]['author'];
-    i++;
-    if(i >= quotes_list.length){
-      i = 0;
-    }
-  });
-}
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return QuoteCard(quote, author, changeQuote);
+  set index(int newIndex){
+    _index = newIndex;
+    notifyListeners();
   }
-
 }
+
