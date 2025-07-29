@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'add_to_favourites.dart';
+import 'quote_screen.dart';
 
 class QuoteCard extends StatelessWidget {
-  String? quote;
-  String? author;
-  VoidCallback next;
-  QuoteCard(this.quote, this.author, this.next);
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -29,7 +27,10 @@ class QuoteCard extends StatelessWidget {
           ],
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
-        child: Column(
+        child: Consumer<MyQuoteApp>(
+          builder: (context, QuoteModel, child) {
+            //var index = QuoteModel.index;
+            return Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -37,7 +38,7 @@ class QuoteCard extends StatelessWidget {
               padding: EdgeInsetsGeometry.fromLTRB(60, 0, 40, 0),
               child: SingleChildScrollView(
                 child: Text(
-                  "$quote",
+                  "${QuoteModel.quotes_list[QuoteModel.index]['quote']}",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                   textAlign: TextAlign.center,
                   softWrap: true,
@@ -46,11 +47,14 @@ class QuoteCard extends StatelessWidget {
               ),
             ),
             SizedBox(height: 50),
-            Text("$author"),
+            Text("${QuoteModel.quotes_list[QuoteModel.index]['author']}"),
             SizedBox(height: 50),
             ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
-              onPressed: () => next(),
+              onPressed: () {
+                QuoteModel.index < QuoteModel.quotes_list.length - 1 ? QuoteModel.index++ : QuoteModel.index = 0;
+                print("${QuoteModel.index}");
+              },
               child: Text(
                 "Next",
                 style: TextStyle(
@@ -69,7 +73,9 @@ class QuoteCard extends StatelessWidget {
               ],
             )
           ],
-        ),
+        );
+          },
+        ) 
       ),
     );
   }
