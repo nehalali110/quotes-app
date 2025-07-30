@@ -4,6 +4,8 @@ import 'add_to_favourites.dart';
 import 'quote_screen.dart';
 
 class QuoteCard extends StatelessWidget {
+  const QuoteCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

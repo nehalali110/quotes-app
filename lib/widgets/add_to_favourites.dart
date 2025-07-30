@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'quote_screen.dart';
 
 class favourite_button extends StatefulWidget{
+  const favourite_button({super.key});
+
   @override
   State<favourite_button> createState() {
     // TODO: implement createState

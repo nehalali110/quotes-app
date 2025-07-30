@@ -4,6 +4,8 @@ import 'widgets/quote_card.dart';
 import 'widgets/quote_screen.dart';
 
 class myHome extends StatelessWidget {
+  const myHome({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

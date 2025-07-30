@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
-import 'quote_card.dart';
 
 class MyQuoteApp extends ChangeNotifier {
   int _index = 0;
