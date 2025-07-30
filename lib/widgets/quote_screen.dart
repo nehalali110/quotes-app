@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
-import 'quote_card.dart';
 
 class MyQuoteApp extends ChangeNotifier {
   int _index = 0;
@@ -56,7 +54,16 @@ class MyQuoteApp extends ChangeNotifier {
         item['author'] == quotes_list[index]['author']
       );
     }
-    print(favourite_quotes);
+    notifyListeners();
+  }
+
+  void removeItem(int index){
+    favourite_quotes.removeAt(index);
+    quotes_list.map((e) {
+      if(e['quote'] == favourite_quotes[index]['quote']){
+        e['isFavourite'] = false;
+      }
+    },);
     notifyListeners();
   }
 }
