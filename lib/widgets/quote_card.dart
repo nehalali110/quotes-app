@@ -55,7 +55,6 @@ class QuoteCard extends StatelessWidget {
               style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
               onPressed: () {
                 QuoteModel.index < QuoteModel.quotes_list.length - 1 ? QuoteModel.index++ : QuoteModel.index = 0;
-                print("${QuoteModel.index}");
               },
               child: Text(
                 "Next",
