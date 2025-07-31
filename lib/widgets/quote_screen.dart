@@ -58,12 +58,14 @@ class MyQuoteApp extends ChangeNotifier {
   }
 
   void removeItem(int index){
-    favourite_quotes.removeAt(index);
-    quotes_list.map((e) {
-      if(e['quote'] == favourite_quotes[index]['quote']){
-        e['isFavourite'] = false;
+    var removedQuote = favourite_quotes[index];
+    for(var quote in quotes_list){
+      if(quote['quote'] == removedQuote['quote'] && quote['author'] == removedQuote['author']){
+        quote['isFavourite'] = false;
+        break;
       }
-    },);
+    }
+    favourite_quotes.removeAt(index);
     notifyListeners();
   }
 }

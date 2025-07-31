@@ -5,6 +5,9 @@ import 'widgets/quote_card.dart';
 import 'widgets/quote_screen.dart';
 import 'package:provider/provider.dart';
 
+
+
+
 class myHome extends StatelessWidget {
   const myHome({super.key});
 
