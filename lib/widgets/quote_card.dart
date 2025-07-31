@@ -10,7 +10,8 @@ class QuoteCard extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     double screenWidth = MediaQuery.of(context).size.width;
-    return DefaultTextStyle(
+    return Center(
+      child : DefaultTextStyle(
       style: TextStyle(fontFamily: 'Bangers'),
       child: Container(
         height: (screenWidth * 0.3).clamp(300,600),
@@ -78,6 +79,7 @@ class QuoteCard extends StatelessWidget {
           },
         ) 
       ),
+    )
     );
   }
 }

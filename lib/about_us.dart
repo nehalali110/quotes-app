@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'widgets/navigation_bar.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -8,35 +10,7 @@ class AboutScreen extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     // TODO: implement build
     return MaterialApp(
-      title: "About This App",
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("About This App"),
-          elevation: 10,
-          actions: [
-            Container(
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(0, 0, 40, 0),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text(
-                    "Home",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Bangers',
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
         body: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
